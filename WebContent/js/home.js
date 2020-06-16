@@ -10,14 +10,8 @@ function productDelete(productId) {
 		console.log(result);
 		if (result == "1") {
 			alert("목록 삭제 성공");
-			var productItem = `<tr id="product-${product.id}">
-				<td>${product.id}</td>
-				<td>${product.name}</td>
-				<td>${product.type}</td>
-				<td>${product.price}</td>
-				<td>${product.count}</td>
-				<td onclick="productDelete(${product.id})" class="material-icons i__btn">delete</td>
-				</tr>`;
+			
+			var productItem = $("#product-"+productId);
 			productItem.remove();	
 		}
 	}).fail(function(Error) {
