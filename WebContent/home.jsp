@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="m-5">
 		
-			<form class="form-inline d-flex justify-content-end">
+			<form id="product__list__form" class="form-inline d-flex justify-content-end">
 			<button type="button" class="btn btn-light mt-5 mb-2">처음으로</button>
 			<button type="button" class="btn btn-light mt-5 mb-2 mr-2 ml-2">가격순</button>
 			<button type="button" class="btn btn-light mt-5 mb-2">판매표</button>
@@ -47,5 +47,26 @@
 			</table>
 		</div>
 	</div>
+
+<script>
+	function productList(productId) {
+		console.log(productId);
+		
+		var data = {
+			productId : productId,
+			content : $("#product__list__form").val()
+		};
+		
+		$.ajax({
+			type : "POST",
+			url : "/ajax_1/product?cmd=home",
+			data : JSON.stringify(data),
+			contentType : "application/json; charset=utf-8",
+			dataType : "json"
+		})
+		
+	}
+</script>
+	
 </body>
 </html>
