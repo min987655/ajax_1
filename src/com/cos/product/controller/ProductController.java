@@ -8,7 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.product.action.Action;
+import com.cos.product.action.ProductCountListAction;
+import com.cos.product.action.ProductCountListProcAction;
+import com.cos.product.action.ProductDeleteProcAction;
 import com.cos.product.action.ProductHomeAction;
+import com.cos.product.action.ProductHomeListProcAction;
+import com.cos.product.action.ProductPriceListAction;
+import com.cos.product.action.ProductPriceListProcAction;
 
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
@@ -37,7 +43,19 @@ public class ProductController extends HttpServlet {
 	public Action router(String cmd) {
 		if (cmd.equals("home")) {
 			return new ProductHomeAction();
-		} 
+		} else if (cmd.equals("homeListProc")) {
+			return new ProductHomeListProcAction();
+		} else if (cmd.equals("priceList")) {
+			return new ProductPriceListAction();
+		} else if (cmd.equals("priceListProc")) {
+			return new ProductPriceListProcAction();
+		} else if (cmd.equals("countList")) {
+			return new ProductCountListAction();
+		} else if (cmd.equals("countListProc")) {
+			return new ProductCountListProcAction();
+		} else if (cmd.equals("deleteProc")) {
+			return new ProductDeleteProcAction();
+		}
 		return null;
 	}
 
