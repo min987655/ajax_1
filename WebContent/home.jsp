@@ -26,7 +26,7 @@
 			</form>
 			<table class="table table-hover">
 				<thead>
-					<tr>
+					<tr align="center">
 						<th>번호</th>
 						<th>이름</th>
 						<th>종류</th>
@@ -37,13 +37,13 @@
 				</thead>
 				<tbody id="product__list">
 					<c:forEach var="product" items="${products}">
-						<tr id="product-${product.id}">
+						<tr align="center" id="product-${product.id}">
 							<td>${product.id}</td>
 							<td>${product.name}</td>
 							<td>${product.type}</td>
 							<td>${product.price}</td>
 							<td>${product.count}</td>
-							<td onclick="productDelete(${product.id})" class="material-icons i__btn">delete</td>
+							<td onclick="productDelete(${product.id})" align="center" style="width: 100% " class="material-icons i__btn">delete</td>
 						</tr>
 					</c:forEach>
 				</tbody>
